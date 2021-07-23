@@ -2,7 +2,7 @@
 title: "SpaceHosting"
 ---
 # Table of contents
-1. [Почему SpaceHosting](#Почему SpaceHosting)
+1. [Почему SpaceHosting](#why)
 2. [Библиотека SpaceHosting.Index](#Библиотека SpaceHosting.Index)
 3. [Локальный запуск](#Локальный запуск)    
 4. [Помощь](#Помощь)
@@ -12,7 +12,7 @@ SpaceHosting - это сервис для поиска k-ближайших со
 
 Библиотека SpaceHosting.Index поддерживает dense и sparse вектора. Для работы с dense векторами используется библиотека [Faiss](https://github.com/facebookresearch/faiss), для sparse векторов мы реализовали свою версию библиотеки [PySparNN](https://github.com/facebookresearch/pysparnn) на C#. 
 
-# Почему SpaceHosting
+# Почему SpaceHosting <a name="why"></a>
 {:toc}
 Преимущества SpaceHosting: 
 * Поддерживает работу с dense и sparse векторами.
