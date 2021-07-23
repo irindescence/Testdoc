@@ -13,4 +13,18 @@ back_to_top: true
 back_to_top_text: "Back to top"
 
 
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <style>
+   body {
+    background: #333; /* Цвет фона */
+    color: .bg-green-200; /* Цвет текста */
+   }
+  </style>
+ </head>
+</html>
+
+
 
