@@ -11,7 +11,7 @@ nav_order: 2
 
 # Table of contents
 * [How to use SpaceHosting](#how) 
-  * [Input file format](#how)
+  * [Input file format](#format)
     * [Vectors](#vectors)
     * [Metadata](#metadata)
   * [SH_INDEX_ALGORITHM possible values](#ALGORITHM)
