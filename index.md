@@ -2,11 +2,16 @@
 title: "SpaceHosting"
 ---
 # Table of contents
-1. [Почему SpaceHosting](#why)
-2. [Библиотека SpaceHosting.Index](#Библиотека SpaceHosting.Index)
-3. [Локальный запуск](#Локальный запуск)    
-4. [Помощь](#Помощь)
-5. [Как использовать SpaceHosting](#Как использовать SpaceHosting)
+* [Почему SpaceHosting](#why)
+* [Библиотека SpaceHosting.Index](#liabry)
+* [Локальный запуск](#lok)    
+* [Помощь](#Помощь)
+* [Как использовать SpaceHosting](#how) 
+ * [Формат входных файлов](#how)
+   * [Вектора](#vectors)
+   * [Метаданные](#metadata)
+ * [Возможные значения SH_INDEX_ALGORITHM](#SH)
+* [Примеры использования](#examples)     
 
 SpaceHosting - это сервис для поиска k-ближайших соседей (далее kNN), использующий .NET библиотеку [SpaceHosting.Index](https://github.com/kontur-model-ops/space-hosting-index#spacehostingindex). 
 
@@ -21,14 +26,14 @@ SpaceHosting - это сервис для поиска k-ближайших со
   * Собственная реализация PySparNN.
 * Поддерживает Approximate kNN (AkNN).
 
-# Библиотека SpaceHosting.Index
+# Библиотека SpaceHosting.Index <a name="liabry"></a>
 SpaceHosting.Index умеет хранить внутри себя маппинг между векторами и набором ключей. При поиске kNN/AkNN вернутся не номера векторов, а ключи, которые им соответствуют. Ключ – это произвольный набор параметров, который характеризует вектор. 
 
 Также библиотека позволяет хранить произвольные метаданные вместе с соответствующими векторами. В результате поиска kNN/AkNN метаданные возвращаются вместе с векторами. 
 
 Подробнее про библиотеку SpaceHosting.Index читайте [здесь](https://github.com/kontur-model-ops/space-hosting-index#spacehostingindex).
 
-# Локальный запуск
+# Локальный запуск <a name="lok"></a>
 ```
 git clone https://github.com/kontur-model-ops/space-hosting.git 
 cd space-hosting 
@@ -39,7 +44,7 @@ cd space-hosting
 # Помощь
 Если у вас возникли вопросы или проблемы с сервисом SpaceHosting, пишите нам в Slack в канал … .
 
-# Как использовать SpaceHosting 
+# Как использовать SpaceHosting <a name="how"></a>
 1. Подготовьте файлы:
  * с [векторами](https://irindescence.github.io/github-pages-with-jekyll/#%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B0); 
  * с [метаданными](https://irindescence.github.io/github-pages-with-jekyll/#%D0%BC%D0%B5%D1%82%D0%B0%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5) (опционально). Определяется по заданной переменной окружения SH_VECTORS_METADATA_FILE_NAME из пункта 2. 
@@ -54,8 +59,8 @@ cd space-hosting
    Можете использовать batch-mode – поиск ближайших векторов сразу для нескольких входных векторов.
 5. SpaceHosting вернет ответ на ваш запрос.
 
-## Формат входных файлов
-### Вектора
+## Формат входных файлов <a name="format"></a>
+### Вектора <a name="vectors"></a>
 В файле с векторами (SH_VECTORS_FILE_NAME) должен лежать список векторов. В зависимости от значения переменной SH_VECTORS_FILE_FORMAT этот список задается по-разному:
 * VectorArrayJson - список векторов сериализован в JSON. Каждый вектор - это массив чисел одинаковой длины, задающих координаты вектора. [Пример файла](https://github.com/kontur-model-ops/space-hosting/blob/master/.data-samples/vectors.json).
 
@@ -63,16 +68,16 @@ cd space-hosting
 
 * PandasDataFrameJson - список векторов задается в JSON-формате, в таком же виде, как его сериализует pandas.DataFrame.to_json. [Пример файла](https://github.com/kontur-model-ops/space-hosting/blob/master/.data-samples/vectors-df.json). 
 
-### Метаданные
+### Метаданные <a name="metadata"></a>
 Файл с метаданными - это набор произвольных пар ключ-значение. Формат файлов JSON. Пример файла смотрите [здесь](https://github.com/kontur-model-ops/space-hosting/blob/master/.data-samples/vectors-metadata.json). Соответствие между векторами и метаданными из входных файлов строится по индексу: первый вектор из файла с векторами соответствует первой записи в файле с метаданными.
 
-## Возможные значения SH_INDEX_ALGORITHM
+## Возможные значения SH_INDEX_ALGORITHM <a name="SH"></a>
 * FaissIndex.Flat.L2 – dense vectors, euclidian metric.
 * FaissIndex.Flat.IP – dense vectors, inner-product metric.
 * SparnnIndex.Cosine – sparse vectors, cosine metric.
 * SparnnIndex.JaccardBinary – sparse binary vectors, jaccard metric.
 
-# Примеры использования
+# Примеры использования <a name="examples"></a>
 1. [Поиск отелей по запросу пользователя](https://github.com/kontur-model-ops/space-hosting/blob/master/samples/spacehosting_hotels_example.ipynb).
 Задача: сэкономить время пользователя на поиск отелей. 
 В этом примере используются векторизованные отзывы пользователей для поиска отелей.
