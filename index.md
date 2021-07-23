@@ -1,5 +1,5 @@
 ---
-title: "SpaceHosting"
+title: "Home"
 ---
 # Table of contents
 * [Почему SpaceHosting](#why)
