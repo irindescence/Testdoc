@@ -10,7 +10,7 @@ title: "SpaceHosting"
   * [Формат входных файлов](#how)
     * [Вектора](#vectors)
     * [Метаданные](#metadata)
- * [Возможные значения SH_INDEX_ALGORITHM](#SH)
+  * [Возможные значения SH_INDEX_ALGORITHM](#SH)
 * [Примеры использования](#examples)     
 
 SpaceHosting - это сервис для поиска k-ближайших соседей (далее kNN), использующий .NET библиотеку [SpaceHosting.Index](https://github.com/kontur-model-ops/space-hosting-index#spacehostingindex). 
