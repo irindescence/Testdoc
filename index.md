@@ -15,14 +15,6 @@ permalink: /
 
 ---
 
-# Table of contents
-* [Почему SpaceHosting](#why)
-* [Библиотека SpaceHosting.Index](#liabry)
-* [Локальный запуск](#lok)    
-* [Помощь](#Помощь)
-
----
-
 SpaceHosting - это сервис для поиска k-ближайших соседей (далее kNN), использующий .NET библиотеку [SpaceHosting.Index](https://github.com/kontur-model-ops/space-hosting-index#spacehostingindex). 
 
 Библиотека SpaceHosting.Index поддерживает dense и sparse вектора. Для работы с dense векторами используется библиотека [Faiss](https://github.com/facebookresearch/faiss), для sparse векторов мы реализовали свою версию библиотеки [PySparNN](https://github.com/facebookresearch/pysparnn) на C#. 
