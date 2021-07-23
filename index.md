@@ -1,6 +1,11 @@
 ---
-title: "How to use"
+layout: default
+title: How to use
+nav_order: 2
+has_children: true
+permalink: /Instruction
 ---
+
 # Table of contents
 * [Как использовать SpaceHosting](#how) 
   * [Формат входных файлов](#how)
@@ -8,7 +13,8 @@ title: "How to use"
     * [Метаданные](#metadata)
   * [Возможные значения SH_INDEX_ALGORITHM](#SH)
 * [Примеры использования](#examples)  
-------------------------------------------------------
+
+---
 
 # Как использовать SpaceHosting <a name="how"></a>
 1. Подготовьте файлы:
