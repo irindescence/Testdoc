@@ -38,7 +38,7 @@ The library also allows to keep any metadata alongside corresponding vectors. kN
 
 [Read more about SpaceHosting.Index](https://github.com/kontur-model-ops/space-hosting-index#spacehostingindex).
 
-## (Running Locally) Local installation 
+## (Running Locally or) Local installation 
 ```
 git clone https://github.com/kontur-model-ops/space-hosting.git 
 cd space-hosting 
