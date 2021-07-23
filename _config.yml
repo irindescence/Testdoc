@@ -6,6 +6,7 @@ github_username:   # DO NOT include the @ character, or else the build will fail
 show_excerpts: true # set to false to remove excerpts on the homepage
 
 remote_theme: pmarsceill/just-the-docs
+color_scheme: my_scheme
 
 # Footer content
 # Back to top link
