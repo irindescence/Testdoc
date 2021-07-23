@@ -21,7 +21,7 @@ nav_order: 2
 
 # How to use <a name="how"></a>
 1. Prepare your files:
- * [vectors files](https://irindescence.github.io/Testdoc/how-to-use/how-to-use.html#vectors-); 
+ * [vectors files](#vectors); 
  * [metadata files](https://irindescence.github.io/Testdoc/how-to-use/how-to-use.html#metadata-) (optional). Metadata file is defined in an environment variable SH_VECTORS_METADATA_FILE_NAME in point 2. 
 2. Run the SpaceHosting service and define following environment variables:
  * SH_VECTORS_FILE_NAME.
