@@ -5,6 +5,11 @@ nav_order: 2
 permalink: /Instruction
 ---
 
+# How to use SpaceHosting
+{: .fs-9 }
+
+---
+
 # Table of contents
 * [Как использовать SpaceHosting](#how) 
   * [Формат входных файлов](#how)
@@ -15,7 +20,7 @@ permalink: /Instruction
 
 ---
 
-# Как использовать SpaceHosting <a name="how"></a>
+# Как использовать <a name="how"></a>
 1. Подготовьте файлы:
  * с [векторами](https://irindescence.github.io/github-pages-with-jekyll/#%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B0); 
  * с [метаданными](https://irindescence.github.io/github-pages-with-jekyll/#%D0%BC%D0%B5%D1%82%D0%B0%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5) (опционально). Определяется по заданной переменной окружения SH_VECTORS_METADATA_FILE_NAME из пункта 2. 
