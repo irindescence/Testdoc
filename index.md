@@ -8,7 +8,7 @@ permalink: /
 # SpaceHosting
 {: .fs-9 }
 
-It is a service for finding k-nearest neighbors.
+Service for finding k-nearest neighbors.
 {: .fs-6 .fw-300 }
 
 [View it on GitHub](https://github.com/kontur-model-ops/space-hosting){: .btn .fs-5 .mb-4 .mb-md-0 }
