@@ -8,7 +8,7 @@ permalink: /
 # SpaceHosting
 {: .fs-9 }
 
-Сервис для поиска k-ближайших соседей.
+It is a service for finding k-nearest neighbors.
 {: .fs-6 .fw-300 }
 
 [View it on GitHub](https://github.com/kontur-model-ops/space-hosting){: .btn .fs-5 .mb-4 .mb-md-0 }
@@ -17,34 +17,34 @@ permalink: /
 
 # Get started
 
-SpaceHosting - это сервис для поиска k-ближайших соседей (далее kNN), использующий .NET библиотеку [SpaceHosting.Index](https://github.com/kontur-model-ops/space-hosting-index#spacehostingindex). 
+SpaceHosting is a service for finding k-nearest neighbors ( kNN) using a .NET library [SpaceHosting.Index](https://github.com/kontur-model-ops/space-hosting-index#spacehostingindex). 
 
-Библиотека SpaceHosting.Index поддерживает dense и sparse вектора. Для работы с dense векторами используется библиотека [Faiss](https://github.com/facebookresearch/faiss), для sparse векторов мы реализовали свою версию библиотеки [PySparNN](https://github.com/facebookresearch/pysparnn) на C#. 
+Dense and sparse vectors are supported. For dense vectors we use [Faiss](https://github.com/facebookresearch/faiss) native library. For sparse vectors we have ported [PySparNN](https://github.com/facebookresearch/pysparnn) library to C#. 
 
 ## Why SpaceHosting? 
 
-Преимущества SpaceHosting: 
-* Поддерживает работу с dense и sparse векторами.
-* Использует поисковые алгоритмы:
+SpaceHosting advantages: 
+* Supports dense and sparse vectors.
+* Uses search algorithms:
   * Faiss.
-  * Собственная реализация PySparNN.
-* Поддерживает Approximate kNN (AkNN).
+  * Ported PySparNN.
+* Supports Approximate kNN (AkNN).
 
-## Library SpaceHosting.Index 
+## SpaceHosting.Index library
 
-SpaceHosting.Index умеет хранить внутри себя маппинг между векторами и набором ключей. При поиске kNN/AkNN вернутся не номера векторов, а ключи, которые им соответствуют. Ключ – это произвольный набор параметров, который характеризует вектор. 
+SpaceHosting.Index keeps a mapping between vectors and a set of keys. При поиске kNN/AkNN eturns keys instead of vector numbers. A key is a set of parameters that identifies a vector. 
 
-Также библиотека позволяет хранить произвольные метаданные вместе с соответствующими векторами. В результате поиска kNN/AkNN метаданные возвращаются вместе с векторами. 
+The library also allows to keep any metadata alongside corresponding vectors. kNN/AkNN search results contain metadata as well as vectors. 
 
-Подробнее про библиотеку SpaceHosting.Index читайте [здесь](https://github.com/kontur-model-ops/space-hosting-index#spacehostingindex).
+[Read more about SpaceHosting.Index](https://github.com/kontur-model-ops/space-hosting-index#spacehostingindex).
 
-## Local installation 
+## (Running Locally) Local installation 
 ```
 git clone https://github.com/kontur-model-ops/space-hosting.git 
 cd space-hosting 
 ./docker-compose-up.sh
 ```
-После этого по ссылке <http://localhost:8080> будет доступна Swagger-спецификация SpaceHosting API.
+After that Swagger-specification for SpaceHosting API will be available at <http://localhost:8080>.
 
 ## Next Step 
 
@@ -54,7 +54,7 @@ cd space-hosting
 
 ## Support
 
-Если у вас возникли вопросы или проблемы с сервисом SpaceHosting, пишите нам в Slack в канал … .
+If you have questions or need help with SpaceHosting service please contact us on Slack channel … .
 
 ## License
 
