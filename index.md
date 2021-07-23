@@ -49,6 +49,7 @@ cd space-hosting
 ## Next Step 
 
 [See How to use SpaceHosting]().
+
 ---
 
 ## Помощь
