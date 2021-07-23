@@ -19,8 +19,7 @@ back_to_top_text: "Back to top"
   <meta charset="utf-8">
   <style>
    body {
-    background: #333; /* Цвет фона */
-    color: .bg-green-200; /* Цвет текста */
+    background: .bg-green-200; /* Цвет фона */
    }
   </style>
  </head>
