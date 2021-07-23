@@ -2,7 +2,6 @@
 layout: default
 title: How to use
 nav_order: 2
-permalink: /Instruction
 ---
 
 # How to use SpaceHosting
@@ -11,53 +10,55 @@ permalink: /Instruction
 ---
 
 # Table of contents
-* [Как использовать SpaceHosting](#how) 
-  * [Формат входных файлов](#how)
-    * [Вектора](#vectors)
-    * [Метаданные](#metadata)
-  * [Возможные значения SH_INDEX_ALGORITHM](#SH)
-* [Примеры использования](#examples)  
+* [How to use SpaceHosting](#how) 
+  * [Input file format](#how)
+    * [Vectors](#vectors)
+    * [Metadata](#metadata)
+  * [SH_INDEX_ALGORITHM possible values](#ALGORITHM)
+* [Examples](#examples)  
 
 ---
 
-# Как использовать <a name="how"></a>
-1. Подготовьте файлы:
- * с [векторами](https://irindescence.github.io/github-pages-with-jekyll/#%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B0); 
- * с [метаданными](https://irindescence.github.io/github-pages-with-jekyll/#%D0%BC%D0%B5%D1%82%D0%B0%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5) (опционально). Определяется по заданной переменной окружения SH_VECTORS_METADATA_FILE_NAME из пункта 2. 
-2. Запустите сервис SpaceHosting и определите следующие переменные окружения:
+# How to use <a name="how"></a>
+1. Prepare your files:
+ * [vectors files](https://irindescence.github.io/github-pages-with-jekyll/#%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B0); 
+ * [metadata files](https://irindescence.github.io/github-pages-with-jekyll/#%D0%BC%D0%B5%D1%82%D0%B0%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5) (optional). Metadata file is defined in an environment variable SH_VECTORS_METADATA_FILE_NAME in point 2. 
+2. Run the SpaceHosting service and define following environment variables:
  * SH_VECTORS_FILE_NAME.
  * SH_VECTORS_FILE_FORMAT.
- * SH_VECTORS_METADATA_FILE_NAME (опционально). 
-    Если переменная не задана, то метаданные в индекс не загружаются.
- * SH_INDEX_ALGORITHM – [тип индекса](https://github.com/irindescence/github-pages-with-jekyll/blob/main/index.md#%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D1%8B%D0%B5-%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-sh_index_algorithm). 
-3. SpaceHosting прочитает входные данные из указанных файлов и построит индекс заданного типа.
-4. Отправьте запрос на поиск kNN/AkNN.
-   Можете использовать batch-mode – поиск ближайших векторов сразу для нескольких входных векторов.
-5. SpaceHosting вернет ответ на ваш запрос.
+ * SH_VECTORS_METADATA_FILE_NAME (optional). If the variable is not set, the metadata is not loaded into the index. 
+ * SH_INDEX_ALGORITHM – [index type](https://github.com/irindescence/github-pages-with-jekyll/blob/main/index.md#%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D1%8B%D0%B5-%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-sh_index_algorithm). 
+3. SpaceHosting will read input from the specified files and build an index of the specified type. 
+4. Submit your search request for kNN/AkNN.
+ * You can use batch-mode – find the nearest vectors for several input vectors at once.
+5. SpaceHosting will return a response to your request.
 
-## Формат входных файлов <a name="format"></a>
-### Вектора <a name="vectors"></a>
-В файле с векторами (SH_VECTORS_FILE_NAME) должен лежать список векторов. В зависимости от значения переменной SH_VECTORS_FILE_FORMAT этот список задается по-разному:
-* VectorArrayJson - список векторов сериализован в JSON. Каждый вектор - это массив чисел одинаковой длины, задающих координаты вектора. [Пример файла](https://github.com/kontur-model-ops/space-hosting/blob/master/.data-samples/vectors.json).
+## Input file format <a name="format"></a>
+### Vectors <a name="vectors"></a>
+The file with vectors (SH_VECTORS_FILE_NAME) must contain a list of vectors. Depending on the value of the SH_VECTORS_FILE_FORMAT variable, this list is set differently:
 
-* PandasDataFrameCsv - список векторов задается в CSV-формате, в таком же виде, как его сериализует [pandas.DataFrame.to_csv](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html). Один вектор - это одна строка, координаты идут через запятую. [Пример файла](https://github.com/kontur-model-ops/space-hosting/blob/master/.data-samples/vectors-df.csv).
+* VectorArrayJson - a list of vectors serialized to JSON. Each vector is an array of numbers of the same length specifying the coordinates of the vector. [File sample](https://github.com/kontur-model-ops/space-hosting/blob/master/.data-samples/vectors.json).
 
-* PandasDataFrameJson - список векторов задается в JSON-формате, в таком же виде, как его сериализует pandas.DataFrame.to_json. [Пример файла](https://github.com/kontur-model-ops/space-hosting/blob/master/.data-samples/vectors-df.json). 
+* PandasDataFrameCsv - the list of vectors is specified in CSV format, in the same form as [pandas.DataFrame.to_csv](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html) serializes it. One vector is one line, coordinates are separated by commas. [File sample](https://github.com/kontur-model-ops/space-hosting/blob/master/.data-samples/vectors-df.csv).
 
-### Метаданные <a name="metadata"></a>
-Файл с метаданными - это набор произвольных пар ключ-значение. Формат файлов JSON. Пример файла смотрите [здесь](https://github.com/kontur-model-ops/space-hosting/blob/master/.data-samples/vectors-metadata.json). Соответствие между векторами и метаданными из входных файлов строится по индексу: первый вектор из файла с векторами соответствует первой записи в файле с метаданными.
+* PandasDataFrameJson - the list of vectors is specified in JSON format, in the same form as pandas.DataFrame.to_json serializes it. [File sample](https://github.com/kontur-model-ops/space-hosting/blob/master/.data-samples/vectors-df.json). 
 
-## Возможные значения SH_INDEX_ALGORITHM <a name="SH"></a>
+### Metadata <a name="metadata"></a>
+
+A metadata file is a set of arbitrary key-value pairs. File format is JSON. See an example file [here](https://github.com/kontur-model-ops/space-hosting/blob/master/.data-samples/vectors-metadata.json). The correspondence between vectors and metadata from the input files is built by the index: the first vector from the file with vectors corresponds to the first record in the file with metadata. 
+
+## SH_INDEX_ALGORITHM possible values <a name="ALGORITHM"></a>
+
 * FaissIndex.Flat.L2 – dense vectors, euclidian metric.
 * FaissIndex.Flat.IP – dense vectors, inner-product metric.
 * SparnnIndex.Cosine – sparse vectors, cosine metric.
 * SparnnIndex.JaccardBinary – sparse binary vectors, jaccard metric.
 
-# Примеры использования <a name="examples"></a>
-1. [Поиск отелей по запросу пользователя](https://github.com/kontur-model-ops/space-hosting/blob/master/samples/spacehosting_hotels_example.ipynb).
-Задача: сэкономить время пользователя на поиск отелей. 
-В этом примере используются векторизованные отзывы пользователей для поиска отелей.
+# Examples <a name="examples"></a>
+1. [Search for hotels by user request](https://github.com/kontur-model-ops/space-hosting/blob/master/samples/spacehosting_hotels_example.ipynb).
+Task: to save the user's time while searching for hotels. 
+This example uses vectorized user reviews to find hotels.
 
 2. [Price Match Guarantee](https://github.com/kontur-model-ops/space-hosting/blob/master/samples/spacehosting_cv_example.ipynb).
-Задача: помочь продавцу установить конкурентоспособную цену для своего товара на маркетплейсе.
-Для этого примера используются данные из [Shopee kaggle Competiton](https://www.kaggle.com/c/shopee-product-matching/overview/description).
+Task: to help the seller establish a competitive price for their product on the marketplace. 
+This example uses data from [Shopee kaggle Competiton](https://www.kaggle.com/c/shopee-product-matching/overview/description).
