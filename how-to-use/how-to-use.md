@@ -22,12 +22,12 @@ nav_order: 2
 # How to use <a name="how"></a>
 1. Prepare your files:
  * [vectors files](#vectors); 
- * [metadata files](https://irindescence.github.io/Testdoc/how-to-use/how-to-use.html#metadata-) (optional). Metadata file is defined in an environment variable SH_VECTORS_METADATA_FILE_NAME in point 2. 
+ * [metadata files](#metadata) (optional). Metadata file is defined in an environment variable SH_VECTORS_METADATA_FILE_NAME in point 2. 
 2. Run the SpaceHosting service and define following environment variables:
  * SH_VECTORS_FILE_NAME.
  * SH_VECTORS_FILE_FORMAT.
  * SH_VECTORS_METADATA_FILE_NAME (optional). If the variable is not set, the metadata is not loaded into the index. 
- * SH_INDEX_ALGORITHM – [index type](https://irindescence.github.io/Testdoc/how-to-use/how-to-use.html#sh_index_algorithm-possible-values-). 
+ * SH_INDEX_ALGORITHM – [index type](#ALGORITHM). 
 3. SpaceHosting will read input from the specified files and build an index of the specified type. 
 4. Submit your search request for kNN/AkNN.
  * You can use batch-mode – find the nearest vectors for several input vectors at once.
