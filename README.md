@@ -37,7 +37,7 @@ After that Swagger-specification for SpaceHosting API will be available at <http
 
 ### Next Step 
 
-* [See How to use SpaceHosting](/Testdoc/how-to-use).
+* [See how to use SpaceHosting](/Testdoc/how-to-use).
 
 
 ## Support
