@@ -21,6 +21,7 @@ permalink: /
 * [Библиотека SpaceHosting.Index](#liabry)
 * [Локальный запуск](#lok)    
 * [Помощь](#Помощь)
+
 ---
 
 SpaceHosting - это сервис для поиска k-ближайших соседей (далее kNN), использующий .NET библиотеку [SpaceHosting.Index](https://github.com/kontur-model-ops/space-hosting-index#spacehostingindex). 
