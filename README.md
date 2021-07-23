@@ -6,7 +6,7 @@
 
 ## Get started
 
-SpaceHosting is a service for finding k-nearest neighbors ( kNN) using a .NET library [SpaceHosting.Index](https://github.com/kontur-model-ops/space-hosting-index#spacehostingindex). 
+SpaceHosting is a service for finding k-nearest neighbors (kNN) using a .NET library [SpaceHosting.Index](https://github.com/kontur-model-ops/space-hosting-index#spacehostingindex). 
 
 Dense and sparse vectors are supported. For dense vectors we use [Faiss](https://github.com/facebookresearch/faiss) native library. For sparse vectors we have ported [PySparNN](https://github.com/facebookresearch/pysparnn) library to C#. 
 
