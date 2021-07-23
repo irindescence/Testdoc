@@ -2,7 +2,6 @@
 layout: default
 title: Home
 nav_order: 1
-description: "Just the Docs is a responsive Jekyll theme with built-in search that is easily customizable and hosted on GitHub Pages."
 permalink: /
 ---
 
@@ -54,3 +53,10 @@ cd space-hosting
 
 # Помощь
 Если у вас возникли вопросы или проблемы с сервисом SpaceHosting, пишите нам в Slack в канал … .
+
+---
+
+## License
+
+SpaceHosting is distributed by an [Apache License 2.0](https://github.com/kontur-model-ops/space-hosting/blob/master/LICENSE).
+
